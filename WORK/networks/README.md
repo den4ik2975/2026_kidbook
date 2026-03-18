@@ -4,7 +4,7 @@
 
 | Участник | GitHub | Статьи |
 |----------|--------|--------|
-| oguzok2012 | @oguzok2012 | TCP и UDP, Как работает онлайн-игра изнутри |
+| oguzok2012 | @oguzok2012 | TCP и UDP, Как работает онлайн-игра изнутри, Что такое пакет |
 | Никита | — | HTTP и HTTPS |
 | *участник 3* | — | *—* |
 | *участник 4* | — | *—* |
@@ -21,7 +21,8 @@
 | [Wi-Fi и локальная сеть](../../KIDBOOK/networks/wifi_lan/README.md) | — | 🚧 |
 | [IP и MAC-адреса](../../KIDBOOK/networks/ip_mac/README.md) | — | 🚧 |
 | [TCP и UDP](../../KIDBOOK/networks/tcp_udp/tcp_udp.md) | oguzok2012 | ✅ |
-| [Как работает онлайн-игра изнутри](../../KIDBOOK/networks/online_game/online_game.md) | oguzok2012 | 🚧 |
+| [Как работает онлайн-игра изнутри](../../KIDBOOK/networks/tcp_udp/online_games.md) | oguzok2012 | ✅ |
+| [Что такое пакет и как данные делятся на части](../../KIDBOOK/networks/tcp_udp/packet.md) | oguzok2012 | 🚧 |
 | [DNS](../../KIDBOOK/networks/dns/README.md) | — | 🚧 |
 | [HTTP и HTTPS](../../KIDBOOK/networks/http_https/http_https.md) | Никита | ✅ |
 
@@ -96,6 +97,49 @@ graph TD
     style QUIC fill:#c0392b,color:#fff
 ```
 
+### Пакет — граф понятий (oguzok2012)
+
+```mermaid
+graph TD
+    DATA["Данные приложения"]
+    SDU["SDU\nService Data Unit\nQ1758093"]
+    PDU["PDU\nБлок данных протокола\nQ2634565"]
+    PACKET["Сетевой пакет\nQ214111"]
+    ENCAP["Инкапсуляция\nQ1172449"]
+    HEADER["Заголовок пакета"]
+    PAYLOAD["Полезная нагрузка"]
+    FRAG["IP-фрагментация\nQ1332338"]
+    MTU["MTU\nМаксимальный размер блока"]
+    OSI["Модель OSI\nQ93312"]
+    TRANSPORT["Транспортный уровень\nQ209372"]
+    NETWORK["Сетевой уровень\nQ208074"]
+    IP["IP\nQ8795"]
+    TCP["TCP\nQ8803"]
+    UDP["UDP\nQ11163"]
+
+    DATA -->|"передаётся как"| SDU
+    SDU -->|"оборачивается в"| PDU
+    PDU -->|"частный случай"| PACKET
+    ENCAP -->|"создаёт"| PACKET
+    PACKET -->|"состоит из"| HEADER
+    PACKET -->|"состоит из"| PAYLOAD
+    FRAG -->|"делит пакет при превышении"| MTU
+    IP -->|"выполняет"| FRAG
+    OSI -->|"содержит"| TRANSPORT
+    OSI -->|"содержит"| NETWORK
+    TRANSPORT -->|"включает"| TCP
+    TRANSPORT -->|"включает"| UDP
+    NETWORK -->|"включает"| IP
+    TCP -->|"передаёт"| PACKET
+    UDP -->|"передаёт"| PACKET
+    IP -->|"маршрутизирует"| PACKET
+
+    style PACKET fill:#4a90d9,color:#fff
+    style ENCAP fill:#27ae60,color:#fff
+    style FRAG fill:#c0392b,color:#fff
+    style OSI fill:#8e44ad,color:#fff
+```
+
 ### Онлайн-игры — граф понятий (oguzok2012)
 
 ```mermaid
@@ -138,7 +182,7 @@ graph TD
 | TCP | Q8803 | oguzok2012 | tcp_udp |
 | UDP | Q11163 | oguzok2012 | tcp_udp |
 | Транспортный уровень | Q209372 | oguzok2012 | tcp_udp |
-| Модель OSI | Q83418 | oguzok2012 | tcp_udp |
+| Модель OSI | Q93312 | oguzok2012 | tcp_udp |
 | Стек TCP/IP | Q81414 | oguzok2012 | tcp_udp |
 | 3-way handshake | Q548838 | oguzok2012 | tcp_udp |
 | Connection-oriented | Q1771161 | oguzok2012 | tcp_udp |
@@ -154,7 +198,13 @@ graph TD
 | HTTP/HTTPS | Q8777 | Никита | http_https |
 | TLS/SSL | Q193143 | Никита | http_https |
 | Cookies | Q483326 | Никита | http_https |
-| *понятие* | *—* | *участник 3* | *—* |
+| Сетевой пакет | Q214111 | oguzok2012 | packet |
+| PDU (блок данных протокола) | Q2634565 | oguzok2012 | packet |
+| SDU | Q1758093 | oguzok2012 | packet |
+| Инкапсуляция | Q1172449 | oguzok2012 | packet |
+| IP-фрагментация | Q1332338 | oguzok2012 | packet |
+| Сетевой уровень OSI | Q208074 | oguzok2012 | packet |
+| IP | Q8795 | oguzok2012 | packet |
 | *понятие* | *—* | *участник 4* | *—* |
 | *понятие* | *—* | *участник 5* | *—* |
 
@@ -162,7 +212,7 @@ graph TD
 
 ## Источники знаний
 
-### oguzok2012 — TCP и UDP + Онлайн-игры
+### oguzok2012 — TCP и UDP + Онлайн-игры + Пакет
 
 #### Запрос 1: базовая информация о TCP и UDP
 ```sparql
@@ -306,6 +356,88 @@ WHERE {
     "wikidata_id": "Q116634",
     "subclasses": ["MMO (Q862490)", "многопользовательская игра (Q6895044)"],
     "related": ["WebSocket (Q859938)", "RTP (Q321213)", "QUIC (Q7265601)", "UDP (Q11163)", "TCP (Q8803)"]
+  }
+}
+```
+
+#### Запросы для статьи «Что такое пакет»
+
+##### Запрос 9: базовые свойства сетевого пакета
+```sparql
+SELECT ?prop ?propLabel ?value ?valueLabel
+WHERE {
+  wd:Q214111 ?p ?value .
+  ?prop wikibase:directClaim ?p .
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "ru,en"
+  }
+}
+```
+
+##### Запрос 10: свойства PDU
+```sparql
+SELECT ?prop ?propLabel ?value ?valueLabel
+WHERE {
+  wd:Q2634565 ?p ?value .
+  ?prop wikibase:directClaim ?p .
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "ru,en"
+  }
+}
+```
+
+##### Запрос 11: финальный сбор всех понятий статьи
+```sparql
+SELECT ?item ?itemLabel ?itemDescription
+WHERE {
+  VALUES ?item {
+    wd:Q214111
+    wd:Q2634565
+    wd:Q1758093
+    wd:Q1172449
+    wd:Q1332338
+    wd:Q208074
+    wd:Q209372
+    wd:Q8795
+    wd:Q93312
+  }
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "ru,en"
+  }
+}
+```
+
+#### Ключевые факты из WikiData — пакет
+
+```json
+{
+  "packet": {
+    "wikidata_id": "Q214111",
+    "instance_of": ["PDU (Q2634565)", "единица информации (Q3550873)"],
+    "used_by": ["TCP (Q8803)", "packet-switched network (Q7122992)"]
+  },
+  "pdu": {
+    "wikidata_id": "Q2634565",
+    "consists_of": ["SDU (Q1758093)"]
+  },
+  "encapsulation": {
+    "wikidata_id": "Q1172449",
+    "description": "метод проектирования модульных протоколов связи"
+  },
+  "ip_fragmentation": {
+    "wikidata_id": "Q1332338",
+    "description": "деление датаграмм для прохождения через канал с меньшим MTU"
+  },
+  "network_layer": {
+    "wikidata_id": "Q208074",
+    "description": "уровень 3 модели OSI"
+  },
+  "osi_model": {
+    "wikidata_id": "Q93312"
+  },
+  "ip": {
+    "wikidata_id": "Q8795",
+    "description": "протокол сетевого уровня стека TCP/IP"
   }
 }
 ```
