@@ -33,6 +33,7 @@
                     "тёмная материя"
                 ],
                 "file": "WEB/1.1_structure_of_the_world/matter/articles/01_matter.md",
+                "wikidata_id": "Q35758",
                 "author": "Арсельгов Адам"
             },
             {
@@ -55,6 +56,7 @@
                     "дискретность материи"
                 ],
                 "file": "WEB/1.1_structure_of_the_world/matter/articles/02_atomism.md",
+                "wikidata_id": "Q178668",
                 "author": "Арсельгов Адам"
             },
             {
@@ -79,6 +81,7 @@
                     "Шрёдингер"
                 ],
                 "file": "WEB/1.1_structure_of_the_world/matter/articles/03_atom_structure.md",
+                "wikidata_id": "Q9121",
                 "author": "Арсельгов Адам"
             },
             {
@@ -98,6 +101,7 @@
                     "полимеры"
                 ],
                 "file": "WEB/1.1_structure_of_the_world/matter/articles/04_molecular_level.md",
+                "wikidata_id": "Q44424",
                 "author": "Маркин Роман"
             },
             {
@@ -119,6 +123,7 @@
                     "плавление"
                 ],
                 "file": "WEB/1.1_structure_of_the_world/matter/articles/05_solids.md",
+                "wikidata_id": "Q11438",
                 "author": "Маркин Роман"
             },
             {
@@ -139,6 +144,7 @@
                     "сверхтекучесть"
                 ],
                 "file": "WEB/1.1_structure_of_the_world/matter/articles/06_liquids.md",
+                "wikidata_id": "Q11435",
                 "author": "Маркин Роман"
             },
             {
@@ -160,6 +166,7 @@
                     "распределение Максвелла"
                 ],
                 "file": "WEB/1.1_structure_of_the_world/matter/articles/07_gases.md",
+                "wikidata_id": "Q11432",
                 "author": "Ефременко Кирилл"
             },
             {
@@ -181,6 +188,7 @@
                     "молния"
                 ],
                 "file": "WEB/1.1_structure_of_the_world/matter/articles/08_plasma.md",
+                "wikidata_id": "Q10251",
                 "author": "Ефременко Кирилл"
             },
             {
@@ -202,6 +210,7 @@
                     "уравнение Клапейрона-Клаузиуса"
                 ],
                 "file": "WEB/1.1_structure_of_the_world/matter/articles/09_phase_transitions.md",
+                "wikidata_id": "Q185357",
                 "author": "Ефременко Кирилл"
             },
             {
@@ -221,6 +230,7 @@
                     "абсолютный ноль"
                 ],
                 "file": "WEB/1.1_structure_of_the_world/matter/articles/10_exotic_states.md",
+                "wikidata_id": "Q35758",
                 "author": "Демидов Максим"
             },
             {
@@ -242,6 +252,7 @@
                     "диэлектрики"
                 ],
                 "file": "WEB/1.1_structure_of_the_world/matter/articles/11_physical_properties.md",
+                "wikidata_id": "Q4373292",
                 "author": "Демидов Максим"
             },
             {
@@ -265,6 +276,7 @@
                     "основание"
                 ],
                 "file": "WEB/1.1_structure_of_the_world/matter/articles/12_chemical_properties.md",
+                "wikidata_id": "Q764285",
                 "author": "Демидов Максим"
             },
             {
@@ -288,6 +300,7 @@
                     "мезон"
                 ],
                 "file": "WEB/1.1_structure_of_the_world/matter/articles/13_elementary_particles.md",
+                "wikidata_id": "Q43116",
                 "author": "Червоненко Павел"
             },
             {
@@ -308,6 +321,7 @@
                     "Теория всего"
                 ],
                 "file": "WEB/1.1_structure_of_the_world/matter/articles/14_fundamental_interactions.md",
+                "wikidata_id": "Q104934",
                 "author": "Червоненко Павел"
             },
             {
@@ -329,6 +343,7 @@
                     "теорема Нётер"
                 ],
                 "file": "WEB/1.1_structure_of_the_world/matter/articles/15_conservation_law.md",
+                "wikidata_id": "Q205805",
                 "author": "Червоненко Павел"
             },
             {
@@ -349,6 +364,7 @@
                     "ПЭТ"
                 ],
                 "file": "WEB/1.1_structure_of_the_world/matter/articles/16_antimatter.md",
+                "wikidata_id": "Q83197",
                 "author": "Караткевич Николай"
             },
             {
@@ -368,6 +384,7 @@
                     "эволюция Вселенной"
                 ],
                 "file": "WEB/1.1_structure_of_the_world/matter/articles/17_dark_matter.md",
+                "wikidata_id": "Q79925",
                 "author": "Караткевич Николай"
             },
             {
@@ -389,6 +406,7 @@
                     "релятивистская масса"
                 ],
                 "file": "WEB/1.1_structure_of_the_world/matter/articles/18_mass_energy.md",
+                "wikidata_id": "Q35875",
                 "author": "Караткевич Николай"
             }
         ]
