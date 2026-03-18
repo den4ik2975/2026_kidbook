@@ -4,7 +4,9 @@
         "topic": "Как и где найти друзей",
         "author_group": "Команда 153",
         "members": [
-            "Якубович Егор"
+            "Якубович Егор",
+            "Стаценко Виктория",
+            "Леоненкова Елена"
         ],
         "concepts": [
             {
@@ -61,6 +63,114 @@
                 "file": "WEB/2.1_society/how_and_where_find_friends/articles/mozno_li_naiti_druzei_sluchaino.md",
                 "wikidata_id": "Q491",
                 "author": "Якубович Егор"
+            },
+            {
+                "id": "toxic_friends",
+                "label": "Токсичные друзья",
+                "name": "Токсичные друзья: 5 звоночков, что пора заканчивать эту \"дружбу\"",
+                "dir": "WEB/2.1_society/how_and_where_find_friends/articles/",
+                "file": "WEB/2.1_society/how_and_where_find_friends/articles/toksichnye_druzya.md",
+                "description": "Пять признаков токсичной дружбы: дисбаланс, обесценивание, конкуренция, чувство вины и эмоциональный вампиризм. Как распознать и что делать.",
+                "lemmas": [
+                    "токсичные друзья",
+                    "дружба",
+                    "психология",
+                    "отношения",
+                    "манипуляция",
+                    "личные границы"
+                ],
+                "wikidata_id": "Q905726",
+                "author": "Стаценко Виктория"
+            },
+            {
+                "id": "easy_conversation_topics",
+                "label": "Изи-темы для разговора",
+                "name": "Изи-темы для разговора: Как заговорить с кем-то, если вы вообще не знакомы",
+                "dir": "WEB/2.1_society/how_and_where_find_friends/articles/",
+                "file": "WEB/2.1_society/how_and_where_find_friends/articles/izi_temy_dlya_razgovora.md",
+                "description": "Простые ситуативные темы, комплименты, вопросы и приёмы для начала разговора с незнакомцем в любой обстановке.",
+                "lemmas": [
+                    "знакомство",
+                    "общение",
+                    "разговор",
+                    "small talk",
+                    "светская беседа",
+                    "незнакомцы"
+                ],
+                "wikidata_id": "Q1335220",
+                "author": "Стаценко Виктория"
+            },
+            {
+                "id": "online_friendship",
+                "label": "Друг познается в переписке",
+                "name": "Друг познается в переписке: Почему в онлайне легче быть собой и как перенести это в реальность",
+                "dir": "WEB/2.1_society/how_and_where_find_friends/articles/",
+                "file": "WEB/2.1_society/how_and_where_find_friends/articles/drug_poznaetsya_v_perepiske.md",
+                "description": "Почему в онлайне люди чувствуют себя свободнее и как перенести эту лёгкость в реальное общение.",
+                "lemmas": [
+                    "онлайн общение",
+                    "психология",
+                    "дружба",
+                    "переписка",
+                    "социальная тревожность",
+                    "эмпатия"
+                ],
+                "wikidata_id": "Q10476753",
+                "author": "Стаценко Виктория"
+            },
+            {
+                "id": "WEB/2.1_society/how_and_where_find_friends/articles/neochevidnye_mesta_dlya_znakomstva",
+                "description": "Подборка из 10 нестандартных мест для знакомства с новыми людьми — от клубов настольных игр до волонтёрских проектов и турклубов.",
+                "lemmas": [
+                    "знакомство",
+                    "новые друзья",
+                    "место для знакомства",
+                    "общение",
+                    "хобби",
+                    "волонтёрство",
+                    "клуб по интересам",
+                    "социализация"
+                ],
+                "name": "Топ-10 неочевидных мест для знакомства",
+                "file": "WEB/2.1_society/how_and_where_find_friends/articles/neochevidnye_mesta_dlya_znakomstva.md",
+                "wikidata_id": "Q223642",
+                "author": "Леоненкова Елена"
+            },
+            {
+                "id": "WEB/2.1_society/how_and_where_find_friends/articles/druzhba_s_sosedyami",
+                "description": "Как познакомиться и подружиться с соседями: чаты дома, субботники, дворовые проекты и традиция чаепитий на лестничной клетке.",
+                "lemmas": [
+                    "соседи",
+                    "дружба",
+                    "двор",
+                    "сообщество",
+                    "чат дома",
+                    "субботник",
+                    "общение",
+                    "социализация"
+                ],
+                "name": "Дружба с соседями: новый тренд или забытое старое?",
+                "file": "WEB/2.1_society/how_and_where_find_friends/articles/druzhba_s_sosedyami.md",
+                "wikidata_id": "Q177634",
+                "author": "Леоненкова Елена"
+            },
+            {
+                "id": "WEB/2.1_society/how_and_where_find_friends/articles/skill_miks",
+                "description": "Почему курсы и мастер-классы — один из лучших способов найти новых людей: актёрское мастерство, языковые клубы, кулинария и другие форматы обучения как нетворкинг.",
+                "lemmas": [
+                    "курсы",
+                    "нетворкинг",
+                    "знакомство",
+                    "обучение",
+                    "общая цель",
+                    "новые люди",
+                    "общение",
+                    "социализация"
+                ],
+                "name": "Skill-микс: идём на курсы не за дипломом, а за людьми",
+                "file": "WEB/2.1_society/how_and_where_find_friends/articles/skill_miks.md",
+                "wikidata_id": "Q2715623",
+                "author": "Леоненкова Елена"
             }
         ]
     }
