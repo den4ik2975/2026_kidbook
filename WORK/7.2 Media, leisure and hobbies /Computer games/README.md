@@ -84,12 +84,8 @@ WEB/
         │       ├── Eyes and back.md
         │       ├── Toxic players.md
         │       └── Games for mind development.md
-        ├── assets/
-        │   ├── images/
-        │   └── icons/
-        ├── raw_data/
-        │   └── wikidata_games_export.json
-        └── src/
-            ├── link_concepts.py
-            └── sparql_queries.txt
+        ├── images/
+        │   
+        ├── contents.md
+        └── index.md
 ```
