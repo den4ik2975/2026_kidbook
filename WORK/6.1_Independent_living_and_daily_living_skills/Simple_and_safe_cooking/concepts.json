@@ -3,7 +3,10 @@
 	"topic": "Простая и безопасная готовка",
 	"author_group": "Команда \"Простая и безопасная готовка\"",
 	"members": [
-		"Венков Кирилл"
+		"Венков Кирилл",
+		"Шиширин Владислав",
+		"Демин Иван",
+		"Лернер Феликс"
 	],
 	"concepts": [
 		{
@@ -71,6 +74,138 @@
 			"file": "6.1_Independent_living_and_daily_living_skills/Simple_and_safe_cooking/articles/safe_use_of_kitchen_appliances.md",
 			"wikidata_id": "",
 			"author": "Венков Кирилл"
+		},
+		{
+			"id": "6.1_Independent_living_and_daily_living_skills/Simple_and_safe_cooking/kitchen_fire_safety",
+			"description": "О правилах пожарной безопасности на кухне: как предотвратить возгорание, каких ошибок избегать при готовке и что делать, если загорелось масло, техника или одежда.",
+			"lemmas": [
+				"пожарная безопасность",
+				"кухня",
+				"возгорание",
+				"горящее масло",
+				"сковорода",
+				"газовая плита",
+				"электроприборы",
+				"огнетушитель",
+				"правила эвакуации",
+				"номер 112",
+				"профилактика пожара",
+				"безопасная готовка"
+			],
+			"name": "kitchen_fire_safety",
+			"file": "6.1_Independent_living_and_daily_living_skills/Simple_and_safe_cooking/articles/kitchen_fire_safety.md",
+			"wikidata_id": "",
+			"author": "Шиширин Владислав"
+		},
+		{
+			"id": "6.1_Independent_living_and_daily_living_skills/Simple_and_safe_cooking/knife_safety",
+			"description": "О безопасной работе с кухонными ножами: правильный хват, техника нарезки, хранение и заточка лезвий, а также первая помощь при порезах.",
+			"lemmas": [
+				"безопасность ножа",
+				"кухонный нож",
+				"техника нарезки",
+				"хват когтей",
+				"острый нож",
+				"тупой нож",
+				"хранение ножей",
+				"заточка ножей",
+				"мусат",
+				"порез",
+				"первая помощь",
+				"безопасность на кухне"
+			],
+			"name": "knife_safety",
+			"file": "6.1_Independent_living_and_daily_living_skills/Simple_and_safe_cooking/articles/knife_safety.md",
+			"wikidata_id": "",
+			"author": "Шиширин Владислав"
+		},
+		{
+			"id": "6.1_Independent_living_and_daily_living_skills/Simple_and_safe_cooking/safe_product_storage",
+			"description": "О безопасном хранении продуктов дома: температурные зоны холодильника, сроки годности, предотвращение перекрестного загрязнения и снижение риска пищевого отравления.",
+			"lemmas": [
+				"хранение продуктов",
+				"холодильник",
+				"температура хранения",
+				"срок годности",
+				"перекрестное загрязнение",
+				"сырое мясо",
+				"готовая еда",
+				"контейнер",
+				"пищевое отравление",
+				"безопасность еды",
+				"гигиена кухни",
+				"ревизия продуктов"
+			],
+			"name": "safe_product_storage",
+			"file": "6.1_Independent_living_and_daily_living_skills/Simple_and_safe_cooking/articles/safe_product_storage.md",
+			"wikidata_id": "",
+			"author": "Шиширин Владислав"
+		},
+		{
+			"id": "6.1_Independent_living_and_daily_living_skills/Simple_and_safe_cooking/10_must_know_recipes",
+			"description": "О десяти базовых блюдах, которые должен уметь готовить каждый: от яичницы и макарон до бульона и запеченной курицы, с простыми пошаговыми инструкциями для самостоятельной готовки.",
+			"lemmas": [
+				"базовые рецепты",
+				"простые блюда",
+				"домашняя готовка",
+				"яичница",
+				"макароны",
+				"гречка",
+				"куриный бульон",
+				"жареная картошка",
+				"запеченная курица",
+				"овсяная каша",
+				"овощной салат",
+				"оладьи"
+			],
+			"name": "10_must_know_recipes",
+			"file": "6.1_Independent_living_and_daily_living_skills/Simple_and_safe_cooking/articles/10_must_know_recipes.md",
+			"wikidata_id": "",
+			"author": "Демин Иван"
+		},
+		{
+			"id": "6.1_Independent_living_and_daily_living_skills/Simple_and_safe_cooking/cooking_techniques",
+			"description": "О базовых техниках тепловой обработки продуктов: варке, жарке, тушении и запекании, их температурных режимах, преимуществах и правильном применении в повседневной кулинарии.",
+			"lemmas": [
+				"тепловая обработка",
+				"варка",
+				"жарка",
+				"тушение",
+				"запекание",
+				"температура приготовления",
+				"реакция майяра",
+				"кулинарные техники",
+				"методы приготовления",
+				"приготовление пищи",
+				"основы кулинарии",
+				"сравнение методов"
+			],
+			"name": "cooking_techniques",
+			"file": "6.1_Independent_living_and_daily_living_skills/Simple_and_safe_cooking/articles/cooking_techniques.md",
+			"wikidata_id": "",
+			"author": "Демин Иван"
+		},
+		{
+			"id": "6.1_Independent_living_and_daily_living_skills/Simple_and_safe_cooking/how_to_read_recipe",
+			"description": "О том, как правильно читать рецепт перед готовкой: проверять ингредиенты и инвентарь, понимать кулинарные термины, измерения, последовательность шагов и избегать типичных ошибок новичков.",
+			"lemmas": [
+				"рецепт",
+				"как читать рецепт",
+				"кулинарные термины",
+				"ингредиенты",
+				"инвентарь",
+				"единицы измерения",
+				"тайминг",
+				"последовательность шагов",
+				"типичные ошибки",
+				"кухонные весы",
+				"подготовка к готовке",
+				"чек лист"
+			],
+			"name": "how_to_read_recipe",
+			"file": "6.1_Independent_living_and_daily_living_skills/Simple_and_safe_cooking/articles/how_to_read_recipe.md",
+			"wikidata_id": "",
+			"author": "Демин Иван"
 		}
 	]
 }
