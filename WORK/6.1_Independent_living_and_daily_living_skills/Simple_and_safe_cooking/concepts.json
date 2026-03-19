@@ -1,7 +1,7 @@
 {
 	"section": "6.1_Independent_living_and_daily_living_skills",
 	"topic": "Простая и безопасная готовка",
-	"author_group": "Команда \"Простая и безопасная готовка\"",
+	"author_group": "Команда 1337 \"Простая и безопасная готовка\"",
 	"members": [
 		"Венков Кирилл",
 		"Шиширин Владислав",
@@ -206,6 +206,72 @@
 			"file": "6.1_Independent_living_and_daily_living_skills/Simple_and_safe_cooking/articles/how_to_read_recipe.md",
 			"wikidata_id": "Q219239",
 			"author": "Демин Иван"
+		},
+		{
+			"id": "6.1_Independent_living_and_daily_living_skills/Simple_and_safe_cooking/cooking_temperature",
+			"description": "О безопасной температуре приготовления продуктов: почему внешний вид блюда не гарантирует готовность, как правильно измерять внутреннюю температуру и какие значения снижают риск пищевого отравления.",
+			"lemmas": [
+				"температура приготовления",
+				"безопасная температура",
+				"внутренняя температура",
+				"кулинарный термометр",
+				"готовность мяса",
+				"курица 75",
+				"фарш 70",
+				"рыба 63",
+				"пищевые бактерии",
+				"термическая обработка",
+				"безопасность еды",
+				"пищевое отравление"
+			],
+			"name": "cooking_temperature",
+			"file": "6.1_Independent_living_and_daily_living_skills/Simple_and_safe_cooking/articles/cooking_temperature.md",
+			"wikidata_id": "Q909821",
+			"author": "Лернер Феликс"
+		},
+		{
+			"id": "6.1_Independent_living_and_daily_living_skills/Simple_and_safe_cooking/hand_hygiene",
+			"description": "О гигиене рук и рабочей поверхности на кухне: когда и как правильно мыть руки, как обрабатывать доски и столешницы и как снизить риск переноса бактерий в готовую еду.",
+			"lemmas": [
+				"гигиена рук",
+				"мытье рук",
+				"20 секунд",
+				"бактерии",
+				"сальмонелла",
+				"кишечная палочка",
+				"рабочая поверхность",
+				"разделочная доска",
+				"чистота кухни",
+				"дезинфекция",
+				"профилактика отравления",
+				"безопасность еды"
+			],
+			"name": "hand_hygiene",
+			"file": "6.1_Independent_living_and_daily_living_skills/Simple_and_safe_cooking/articles/hand_hygiene.md",
+			"wikidata_id": "Q552461",
+			"author": "Лернер Феликс"
+		},
+		{
+			"id": "6.1_Independent_living_and_daily_living_skills/Simple_and_safe_cooking/cross_contamination",
+			"description": "О перекрестном загрязнении продуктов на кухне: как бактерии переходят с сырого мяса на готовую еду через ножи, доски, руки и поверхности, и как этого избежать.",
+			"lemmas": [
+				"перекрестное загрязнение",
+				"контаминация",
+				"перенос бактерий",
+				"сырое мясо",
+				"готовая еда",
+				"раздельные доски",
+				"раздельные ножи",
+				"гигиена кухни",
+				"хранение в холодильнике",
+				"пищевое отравление",
+				"сальмонелла",
+				"профилактика заражения"
+			],
+			"name": "cross_contamination",
+			"file": "6.1_Independent_living_and_daily_living_skills/Simple_and_safe_cooking/articles/cross_contamination.md",
+			"wikidata_id": "Q113574247",
+			"author": "Лернер Феликс"
 		}
 	]
 }
