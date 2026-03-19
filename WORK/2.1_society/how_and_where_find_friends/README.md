@@ -30,4 +30,6 @@
 - [Дружба после школы: Что делать, если живешь в одном дворе, а интересы — в разных вселенных?](../../../WEB/2.1_society/how_and_where_find_friends/articles/druzhba_posle_shkoly.md)
 - [Конфликты: Как поссориться с лучшим другом и не потерять его навсегда](../../../WEB/2.1_society/how_and_where_find_friends/articles/konflikty_s_druzyami.md)
 - [Сам себе интересный: Как проводить время с собой, чтобы не сойти с ума от одиночества](../../../WEB/2.1_society/how_and_where_find_friends/articles/sam_sebe_interesnyi.md)
-
+- [Дружба на веки: Как не поссориться с лучшим другом и не потерять его навсегда](../../../WEB/2.1_society/how_and_where_find_friends/articles/sora_drug.md.md)
+- [Кринж или норм? Как понять, не бесишь ли ты нового друга своим поведением](../../../WEB/2.1_society/how_and_where_find_friends/articles/cringe.md.md)
+- [Косплей, аниме, K-pop: Как найти своих в узком фэндоме и перестать прятаться ](../../../WEB/2.1_society/how_and_where_find_friends/articles/fandom.md.md)

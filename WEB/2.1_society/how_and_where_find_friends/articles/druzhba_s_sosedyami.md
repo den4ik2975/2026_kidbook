@@ -139,6 +139,6 @@
 
 ---
 
-Авторы: *leoelena, @leoelena2;*
+Авторы: *Леоненкова Елена leoelena, @leoelena2;*
 
 *Ресурсы: Perplexity (GPT‑5.1), Nano Banana 2*
