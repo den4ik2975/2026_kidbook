@@ -756,6 +756,7 @@ flowchart TD
 **Карта и схемы:**
 - Фоновая карта: Natural Earth / pyogrio naturalearth_lowres fixture
 - Маршруты и точки: учебная авторская схема для этой статьи
+- Исходный GeoJSON карты хранится в `WORK/2.2_history/world_economy_on_fingers/assets/maps/globalizatsiya_map.geojson`
 
 ---
 ***Автор:** Авраменко Денис @denisuelius*  

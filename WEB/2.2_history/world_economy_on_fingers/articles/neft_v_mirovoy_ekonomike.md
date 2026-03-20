@@ -916,13 +916,15 @@ flowchart TB
 <a id="sources"></a>
 ## Источники данных и визуалов
 
-Ниже — основные источники, на которых построены таблицы, графики и карта:
-
+**Основные данные для графиков:**
 - **U.S. Energy Information Administration (EIA)** — Brent spot price history и данные по мировым нефтяным chokepoints.  
 - **World Bank, Pink Sheet** — квартальные средние цены на нефть Brent за 2024–2025 годы.  
 - **International Energy Agency (IEA)** — материалы о роли нефти в мировой энергетике и транспорте.  
 - **Our World in Data / Energy Institute Statistical Review of World Energy 2025** — сравнительные данные по крупным производителям нефти.  
+
+**Карта и схемы:**
 - **Natural Earth** — базовая география для учебной карты мира.
+- Исходный GeoJSON карты хранится в `WORK/2.2_history/world_economy_on_fingers/assets/maps/neft_v_mirovoy_ekonomike_map.geojson`
 
 > [!NOTE]
 > Визуалы в этой статье сделаны специально для этой темы, поэтому маршруты и трубопроводы показаны **схематично**, а не как инженерные карты с точностью до километра.

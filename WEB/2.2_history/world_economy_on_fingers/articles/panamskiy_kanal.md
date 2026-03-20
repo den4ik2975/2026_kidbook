@@ -366,7 +366,7 @@ UNCTAD подчёркивала, что ограничения прохода ч
 - Encyclopedia Britannica — обзор по Панамскому каналу
 - Panama Canal Authority — материалы по расширенному каналу
 
-**Источники для роли канала в мировой торговле:**
+**Источники для объяснений и исторического контекста:**
 - Panama Canal Authority — страница *Trade Routes*
 - Panama Canal Authority — официальный сайт с текущими показателями маршрутов, портов, стран и транзитов
 - UNCTAD — материалы о сбоях в мировых морских chokepoints и влиянии ограничений на Панамском канале
@@ -378,6 +378,7 @@ UNCTAD подчёркивала, что ограничения прохода ч
 **Карта и схемы:**
 - Фоновая карта: Natural Earth / pyogrio naturalearth_lowres fixture
 - Линия канала и точки маршрута: учебная авторская схема для этой статьи
+- Исходный GeoJSON карты хранится в `WORK/2.2_history/world_economy_on_fingers/assets/maps/panamskiy_kanal_map.geojson`
 
 ---
 

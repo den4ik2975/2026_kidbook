@@ -586,27 +586,20 @@ graph LR
 <a id="sources"></a>
 ## Источники данных и визуалов
 
-<details>
-<summary>Открыть список источников</summary>
-
-### Данные для графиков
-
+**Основные данные для графиков:**
 - [Maddison Project Database 2023 (DataverseNL)](https://dataverse.nl/dataset.xhtml?persistentId=doi:10.34894/INZBF2)
 - [Maddison Project Database 2023 — University of Groningen](https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2023?lang=en)
 
-### Картографическая основа
-
+**Карта и схемы:**
 - [Natural Earth: Admin 0 – Countries](https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/)
+- Исходный GeoJSON карты хранится в `WORK/2.2_history/world_economy_on_fingers/assets/maps/aziatskie_tigry_map.geojson`
 
-### Локальные файлы визуалов
-
+**Локальные файлы визуалов:**
 - `../images/aziatskie_tigry_map.png`
 - `../images/aziatskie_tigry_gdppc_1960_2022.png`
 - `../images/aziatskie_tigry_gdppc_index_1960_2022.png`
 - `../images/aziatskie_tigry_total_gdp_1960_2022.png`
 - `../images/aziatskie_tigry_gdppc_growth_multipliers.png`
-
-</details>
 
 ---
 ***Автор:** Авраменко Денис @denisuelius*  
