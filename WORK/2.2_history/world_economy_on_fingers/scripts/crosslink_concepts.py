@@ -1,13 +1,14 @@
 """Cross-link concepts in Markdown articles.
 
 Usage:
-    python crosslink_concepts.py --concepts /path/to/WORK/2.2_history/concepts.json --apply
+    python crosslink_concepts.py --concepts /path/to/WORK/2.2_history/world_economy_on_fingers/concepts.json --apply
     python crosslink_concepts.py --concepts /path/to/concepts.json WEB/2.2_history/world_economy_on_fingers/articles
 
-The script reads concept metadata from the shared concepts.json file, scans
+The script reads concept metadata from the section concepts.json file, scans
 Markdown articles for Russian concepts and their inflected forms, and replaces
 the first suitable plain-text occurrence with a Markdown link to the concept
-article.
+article. When links_from_article is present for a concept, only those target
+concepts are considered for cross-links.
 
 It skips headings, fenced code blocks, inline code, URLs, and existing Markdown
 links/images. By default it prints a dry-run summary; pass --apply to rewrite
@@ -23,7 +24,7 @@ import re
 from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Iterable, Iterator
+from typing import Iterable
 
 try:
     from pymorphy3 import MorphAnalyzer  # type: ignore
@@ -37,11 +38,13 @@ URL_RE = re.compile(r"https?://\S+")
 HTML_TAG_RE = re.compile(r"<[^>\n]+>")
 MARKDOWN_LINK_RE = re.compile(r"!\[[^\]\n]*\]\([^\n]*?\)|\[[^\]\n]*\]\([^\n]*?\)")
 HTML_COMMENT_RE = re.compile(r"<!--.*?-->", re.DOTALL)
+DEFAULT_CONCEPTS_PATH = Path(__file__).resolve().parent.parent / "concepts.json"
 
 
 @dataclass(frozen=True)
 class ConceptPattern:
     name: str
+    lookup_name: str
     target: Path
     patterns: tuple[tuple[str, ...], ...]
     first_tokens: frozenset[str]
@@ -73,6 +76,10 @@ def normalize_word(word: str, morph: MorphAnalyzer | None) -> str:
 
 def normalize_phrase(phrase: str, morph: MorphAnalyzer | None) -> tuple[str, ...]:
     return tuple(normalize_word(token, morph) for token in WORD_RE.findall(phrase))
+
+
+def normalize_lookup_value(value: str) -> str:
+    return re.sub(r"\s+", " ", value.replace("Ё", "Е").replace("ё", "е")).strip().lower()
 
 
 def merge_spans(spans: list[tuple[int, int]]) -> list[tuple[int, int]]:
@@ -111,7 +118,11 @@ def is_allowed_token(start: int, end: int, spans: list[tuple[int, int]]) -> bool
     return not is_span_blocked(start, end, spans)
 
 
-def load_concepts(concepts_path: Path, repo_root: Path, morph: MorphAnalyzer | None) -> list[ConceptPattern]:
+def load_concepts(
+    concepts_path: Path,
+    repo_root: Path,
+    morph: MorphAnalyzer | None,
+) -> tuple[list[ConceptPattern], dict[Path, frozenset[str] | None]]:
     raw = json.loads(concepts_path.read_text(encoding="utf-8"))
     if isinstance(raw, dict):
         if isinstance(raw.get("concepts"), list):
@@ -120,6 +131,7 @@ def load_concepts(concepts_path: Path, repo_root: Path, morph: MorphAnalyzer | N
             raw = [value for value in raw.values() if isinstance(value, dict) and isinstance(value.get("concepts"), list)]
 
     concepts: list[ConceptPattern] = []
+    allowed_targets_by_source: dict[Path, frozenset[str] | None] = {}
     for block in raw if isinstance(raw, list) else []:
         if not isinstance(block, dict):
             continue
@@ -131,6 +143,18 @@ def load_concepts(concepts_path: Path, repo_root: Path, morph: MorphAnalyzer | N
                 continue
             target = (repo_root / file_value).resolve()
             name = str(concept.get("name") or concept.get("label") or concept.get("title") or target.stem)
+            lookup_name = normalize_lookup_value(name)
+            raw_allowed_targets = concept.get("links_from_article")
+            allowed_targets = (
+                frozenset(
+                    normalize_lookup_value(str(item))
+                    for item in raw_allowed_targets
+                    if isinstance(item, str) and item.strip()
+                )
+                if isinstance(raw_allowed_targets, list)
+                else None
+            )
+            allowed_targets_by_source[target] = allowed_targets or None
 
             phrase_sources: list[str] = [name]
             phrase_sources.extend(
@@ -154,12 +178,13 @@ def load_concepts(concepts_path: Path, repo_root: Path, morph: MorphAnalyzer | N
                 concepts.append(
                     ConceptPattern(
                         name=name,
+                        lookup_name=lookup_name,
                         target=target,
                         patterns=tuple(sorted(patterns, key=lambda item: (-len(item), item))),
                         first_tokens=first_tokens,
                     )
                 )
-    return concepts
+    return concepts, allowed_targets_by_source
 
 
 def iter_markdown_files(paths: list[Path], repo_root: Path, default_files: Iterable[Path]) -> list[Path]:
@@ -244,12 +269,14 @@ def find_candidate_in_tokens(
 def process_article(
     path: Path,
     concepts_by_first_token: dict[str, list[ConceptPattern]],
+    allowed_targets_by_source: dict[Path, frozenset[str] | None],
     morph: MorphAnalyzer | None,
     apply: bool,
 ) -> tuple[bool, list[str]]:
     text = path.read_text(encoding="utf-8")
     lines = text.splitlines(keepends=True)
     source_path = path.resolve()
+    allowed_target_names = allowed_targets_by_source.get(source_path)
     in_code_block = False
     footer_index = len(lines)
     for index, line in enumerate(lines):
@@ -275,16 +302,17 @@ def process_article(
         if in_code_block or stripped.startswith("#"):
             continue
 
-        blocked, tokens = tokenize_line(line, morph)
-        token_norms = {token[2] for token in tokens}
+        _, tokens = tokenize_line(line, morph)
         if not tokens:
             continue
 
         candidate_concepts: list[ConceptPattern] = []
         seen_candidates: set[Path] = set()
-        for token in token_norms:
+        for _, _, token in tokens:
             for concept in concepts_by_first_token.get(token, []):
                 if concept.target == source_path or concept.target in seen_candidates or concept.target in linked_targets:
+                    continue
+                if allowed_target_names is not None and concept.lookup_name not in allowed_target_names:
                     continue
                 seen_candidates.add(concept.target)
                 candidate_concepts.append(concept)
@@ -328,8 +356,8 @@ def main() -> int:
     parser.add_argument(
         "--concepts",
         type=Path,
-        default=Path("WORK/2.2_history/concepts.json"),
-        help="Path to the shared concepts.json file.",
+        default=DEFAULT_CONCEPTS_PATH,
+        help="Path to the concepts.json file for this section.",
     )
     parser.add_argument(
         "--apply",
@@ -347,7 +375,7 @@ def main() -> int:
     concepts_path = args.concepts if args.concepts.is_absolute() else args.concepts.resolve()
     repo_root = find_repo_root(concepts_path.parent)
     morph = MorphAnalyzer() if MorphAnalyzer is not None else None
-    concepts = load_concepts(concepts_path, repo_root, morph)
+    concepts, allowed_targets_by_source = load_concepts(concepts_path, repo_root, morph)
     concepts_by_first_token = build_first_token_index(concepts)
     files = iter_markdown_files(args.paths, repo_root, default_article_files(concepts))
 
@@ -361,7 +389,13 @@ def main() -> int:
         if not path.exists():
             print(f"skip missing: {path}", flush=True)
             continue
-        changed, linked_concepts = process_article(path, concepts_by_first_token, morph, args.apply)
+        changed, linked_concepts = process_article(
+            path,
+            concepts_by_first_token,
+            allowed_targets_by_source,
+            morph,
+            args.apply,
+        )
         if changed:
             changed_files.append(path)
             total_links += len(linked_concepts)
